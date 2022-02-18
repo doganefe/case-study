@@ -1,0 +1,19 @@
+.app__header {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.app__header>p {
+    position: absolute;
+    font-size: .7rem;
+    right: 0rem;
+    top: 0rem;
+    color: gray;
+    text-align: center;
+}
+
+@media (max-width : 360px) {
+    .app__header>p {
+        display: none;
+    }
+}

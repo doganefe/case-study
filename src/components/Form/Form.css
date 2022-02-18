@@ -1,0 +1,22 @@
+.form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__input {
+    /* border-radius: .7rem; */
+    padding: 0.5rem .5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    outline: none;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
+
+}
+
+.form__input:focus {
+    border-color: #2193b0;
+}

@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { StateProvider } from "./contextApi/stateProvider";
+import Header from "./components/Header/Header";
+import List from "./components/List/List";
+import Form from "./components/Form/Form";
+import { initialState, reducer } from "./contextApi/reducer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <div className="app">
+        <div className="container">
+          <Header />
+          <Form />
+          <List />
+        </div>
+      </div>
+    </StateProvider>
   );
 }
 

@@ -2,6 +2,8 @@ import actions from "./actions";
 
 export const initialState = {
   list: [],
+  isModalOpen: false,
+  personDetail: "",
 };
 
 function uuidv4() {
@@ -23,27 +25,25 @@ function createItem(name) {
 
 export function reducer(state = initialState, action) {
   switch (action.type) {
-    case actions.TOGGLE_ITEM:
-      let tempList = [...state.list];
-      const id = action.payload;
-      tempList = tempList.map((item) => {
-        return item.id === id ? { ...item, completed: !item.completed } : item;
-      });
+    case actions.SET_LIST:
       return {
         ...state,
-        list: tempList,
+        list: action.payload,
       };
-    case actions.ADD_ITEM:
-      const item = createItem(action.payload);
+    case actions.SET_MODAL:
       return {
         ...state,
-        list: [...state.list, item],
       };
-    case actions.DELETE_COMPLETED_TODOS:
-      const filteredList = [...state.list].filter((todo) => !todo.completed);
+    case actions.OPEN_MODAL:
       return {
         ...state,
-        list: filteredList,
+        personDetail: action.payload,
+        isModalOpen: true,
+      };
+    case actions.CLOSE_MODAL:
+      return {
+        ...state,
+        isModalOpen: false,
       };
     default:
       break;

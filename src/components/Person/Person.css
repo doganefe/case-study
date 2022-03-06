@@ -1,0 +1,19 @@
+.person {
+    user-select: none;
+    padding: .5rem 0;
+    /* border-bottom: 1px solid lightgray; */
+    display: flex;
+    align-items: center;
+}
+
+.person>p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.person__delete {
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}

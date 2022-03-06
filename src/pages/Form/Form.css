@@ -1,9 +1,10 @@
 .form {
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
 }
+
 
 .form__input {
     /* border-radius: .7rem; */
@@ -19,4 +20,8 @@
 
 .form__input:focus {
     border-color: #2193b0;
+}
+
+.form>h2 {
+    margin-bottom: 1rem;
 }
